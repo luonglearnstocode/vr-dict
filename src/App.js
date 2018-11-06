@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import logo from './images/logo.jpg';
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
+import logo from './images/logo.png';
 
 class App extends Component {
   constructor(props) {
@@ -14,13 +17,16 @@ class App extends Component {
   render() {
     const { date } = this.state;
     return (
-      <div className="App">
-        It is
-        { date.toString() }
-        <div className="row center-align">
-          <img src={logo} alt="vr logo" height="200" width="200" />
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          It is
+          { date.toString() }
+          <div className="row center-align">
+            <img src={logo} alt="vr logo" height="200" width="200" />
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 }
