@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import logo from './images/logo.jpg';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    document.title = 'VR dictionary';
   }
 
   render() {
@@ -13,7 +18,7 @@ class App extends Component {
         It is
         { date.toString() }
         <div className="row center-align">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/VR_Group_logo.svg/1200px-VR_Group_logo.svg.png" alt="vr logo" height="200" width="200" />
+          <img src={logo} alt="vr logo" height="200" width="200" />
         </div>
       </div>
     );
