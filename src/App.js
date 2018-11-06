@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
   render() {
+    const { date } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        It is
+        { date.toString() }
+        <div className="row center-align">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/VR_Group_logo.svg/1200px-VR_Group_logo.svg.png" alt="vr logo" height="200" width="200" />
+        </div>
       </div>
     );
   }
