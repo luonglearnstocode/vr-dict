@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Dictionary from './components/Dictionary';
 
 import logo from './images/logo.png';
 
@@ -25,6 +26,7 @@ class App extends Component {
           <div className="row center-align">
             <img src={logo} alt="vr logo" height="200" width="200" />
           </div>
+          <Dictionary />
         </div>
       </BrowserRouter>
     );
