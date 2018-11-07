@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import Result from './Result';
 import dict from '../dict';
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
@@ -68,7 +69,7 @@ class Dictionary extends Component {
 
   onSuggestionSelected = (event, { suggestion, suggestionValue }) => {
     this.setState({
-      result: suggestion.fiTerm,
+      result: suggestion,
     });
     // console.log(suggestionValue);
   };
@@ -98,7 +99,8 @@ class Dictionary extends Component {
           />
 
         </div>
-        <div className="card">{ result }</div>
+        { result ? <Result word={result} /> : null }
+        {/* <div className="container">{ result }</div> */}
       </div>
     );
   }
