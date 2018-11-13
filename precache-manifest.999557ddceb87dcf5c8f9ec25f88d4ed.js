@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/vr-dict/static/media/de.d9377c50.png"
   },
   {
-    "revision": "19480ba80c798c06538a",
+    "revision": "7d1a9364380432d0da17",
     "url": "/vr-dict/static/css/main.7e4b8fe3.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/vr-dict/static/media/en.54df9031.png"
   },
   {
-    "revision": "19480ba80c798c06538a",
-    "url": "/vr-dict/static/js/main.19480ba8.chunk.js"
+    "revision": "7d1a9364380432d0da17",
+    "url": "/vr-dict/static/js/main.7d1a9364.chunk.js"
   },
   {
     "revision": "9b05fd26bddac42797779e34b3768a45",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/vr-dict/static/media/sv.f772ff91.png"
   },
   {
-    "revision": "4fbba859ff7d6c5ee0b59e14901c42c7",
+    "revision": "fb6c9074288b4c21ec3bc4c47e1a1bb0",
     "url": "/vr-dict/index.html"
   }
 ];
