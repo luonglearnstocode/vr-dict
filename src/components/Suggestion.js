@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Suggestion(props) {
-  const { word, language } = props;
-  const image = `/images/flags/${language}.png`;
+function Suggestion({ word, language }) {
+  const image = `./images/flags/${language}.png`;
   return (
     <div className="row valign-wrapper">
       <div className="col s2 l1">
-        <img src={image} alt={language} className="circle responsive-img" title={language} />
+        <img src={image} alt={language} className="circle responsive-img" />
       </div>
       <div className="col s9 l10">
         <span className="black-text">

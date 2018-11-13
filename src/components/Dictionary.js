@@ -102,10 +102,9 @@ class Dictionary extends Component {
             // alwaysRenderSuggestions={true}
             inputProps={inputProps}
           />
-
         </div>
+
         { result ? <Result word={result} /> : null }
-        {/* <div className="container">{ result }</div> */}
       </div>
     );
   }
