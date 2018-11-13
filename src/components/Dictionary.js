@@ -11,7 +11,9 @@ function escapeRegexCharacters(str) {
 }
 
 function lookUp({ word, language }) { // look up word(suggestion) from dict
-  return dict.filter(w => w[`${language}Term`] === word)[0];
+  const result = dict.filter(w => w[`${language}Term`] === word)[0];
+  result.fromLanguage = language;
+  return result;
 }
 
 function getSuggestions(value) {
@@ -48,7 +50,7 @@ class Dictionary extends Component {
     this.state = {
       value: '',
       result: '',
-      suggestions: words,
+      suggestions: getSuggestions(''),
     };
   }
 
@@ -60,6 +62,7 @@ class Dictionary extends Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
+    console.log('fetching');
     this.setState({
       suggestions: getSuggestions(value),
     });
@@ -67,7 +70,7 @@ class Dictionary extends Component {
 
   onSuggestionsClearRequested = () => {
     this.setState({
-      suggestions: [],
+      suggestions: getSuggestions(''),
     });
   };
 
@@ -75,6 +78,8 @@ class Dictionary extends Component {
     // console.log(lookUp(suggestion));
     this.setState({
       result: lookUp(suggestion),
+      value: '', // clear input field after selected
+
     });
     // console.log(suggestionValue);
   };

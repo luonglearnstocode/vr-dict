@@ -14,7 +14,6 @@ class Result extends Component {
   constructor({ word }) {
     super();
     this.state = { word };
-    console.log(this.state);
   }
 
   componentWillReceiveProps({ word }) {
@@ -22,12 +21,12 @@ class Result extends Component {
   }
 
   render() {
-    console.log(this.state);
     const { word } = this.state;
-    const meanings = (
+
+    const translations = (
       <ul>
         {languages
-          .filter(language => `${language}Term` in word) // if dict has translation to this word
+          .filter(language => language !== word.fromLanguage && `${language}Term` in word) // if dict has translation to this word
           .map(language => <li key={language}><Word language={language} word={word[`${language}Term`]} usageNote={word[`${language}UsageNote`]} /></li>)}
       </ul>
     );
@@ -35,8 +34,11 @@ class Result extends Component {
     return (
       <div className="result-box">
         <div className="col s12 m8 offset-m2 l6 offset-l3">
-          <div className="card-panel grey lighten-5 z-depth-1">
-            {meanings}
+          <div className="card-panel grey lighten-2 z-depth-1">
+            <Word language={word.fromLanguage} word={word[`${word.fromLanguage}Term`]} usageNote={word[`${word.fromLanguage}UsageNote`]} />
+          </div>
+          <div className="card-panel grey lighten-4 z-depth-1">
+            {translations}
           </div>
         </div>
       </div>
