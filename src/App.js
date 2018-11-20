@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import Navbar from './components/Navbar';
 import Dictionary from './components/Dictionary';
 
 class App extends Component {
@@ -10,17 +8,14 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className="App">
-          <Navbar />
-          <div className="container">
-            <div className="row center-align">
-              <img src="./images/logo.png" alt="vr logo" className="responsive-img" />
-            </div>
+      <div className="App">
+        <div className="container">
+          <div className="row center-align">
+            <img src="./images/logo.png" alt="vr logo" className="responsive-img" />
           </div>
-          <Dictionary />
         </div>
-      </BrowserRouter>
+        <Dictionary />
+      </div>
     );
   }
 }
