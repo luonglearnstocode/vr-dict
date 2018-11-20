@@ -16,22 +16,21 @@ function lookUp({ word, language }) { // look up word(suggestion) from dict
   return result;
 }
 
-function getSuggestions(value) {
-  const escapedValue = escapeRegexCharacters(value.trim());
-
-  if (escapedValue === '') { // only display the first 100 words
-    return words.slice(0, 100);
-  }
-
-  const regex = new RegExp(`^${escapedValue}`, 'i');
-
-  return words.filter(word => regex.test(word.word));
-}
-
 function getSuggestionValue(suggestion) {
   return suggestion.word;
 }
 
+function getSuggestions(value) {
+  const escapedValue = escapeRegexCharacters(value.trim());
+
+  if (escapedValue === '') { // not display suggestions when input is blank
+    return [];
+  }
+
+  const regex = new RegExp(`\\b${escapedValue}`, 'i'); // match words in the middle of the string
+
+  return words.filter(word => regex.test(getSuggestionValue(word)));
+}
 
 function renderSuggestion(suggestion) {
   return (
