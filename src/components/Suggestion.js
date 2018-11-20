@@ -12,10 +12,10 @@ function Suggestion({ word, language, query }) {
 
   return (
     <div className="row valign-wrapper">
-      <div className="col s2 l1">
+      <div className="col s2 offset-s1 l1">
         <img src={image} alt={language} className="circle responsive-img" />
       </div>
-      <div className="col s9 l10" style={{ fontSize: 'large' }}>
+      <div className="col s9 l10  offset-l1" style={{ fontSize: 'large' }}>
         {
           parts.map((part, index) => {
             const className = part.highlight ? 'red-text' : 'black-text';

@@ -34,10 +34,10 @@ class Result extends Component {
     return (
       <div className="result-box">
         <div className="col s12 m8 offset-m2 l6 offset-l3">
-          <div className="card-panel grey lighten-2 z-depth-1">
+          <div className="grey lighten-2 z-depth-1">
             <Word language={word.fromLanguage} word={word[`${word.fromLanguage}Term`]} usageNote={word[`${word.fromLanguage}UsageNote`]} />
           </div>
-          <div className="card-panel grey lighten-4 z-depth-1">
+          <div className="grey lighten-4 z-depth-1">
             {translations}
           </div>
         </div>

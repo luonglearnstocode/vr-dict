@@ -15,18 +15,18 @@ function Word({ language, word, usageNote }) {
   const image = `./images/flags/${language}.png`;
   return (
     <div className="row valign-wrapper">
-      <div className="col s2 l1">
-        <img src={image} alt={language} className="circle responsive-img" title={languages[language]} />
+      <div className="col s2 l1 offset-l1">
+        <img align="middle" src={image} alt={language} className="circle responsive-img" title={languages[language]} />
       </div>
-      <div className="col s8 l9">
-        <h5>{ word }</h5>
+      <div className="col s8 l8 offset-l1">
+        <h4 className="flow-text">{ word }</h4>
         <blockquote>
           { usageNote }
         </blockquote>
       </div>
-      <div className="col s1 l1">
+      <div className="col s2 l1">
         <CopyToClipboard text={word}>
-          <button type="submit" className="btn-flat">
+          <button type="submit" className="btn-flat" title="copy to clipboard">
             <i className="material-icons">content_copy</i>
           </button>
         </CopyToClipboard>
