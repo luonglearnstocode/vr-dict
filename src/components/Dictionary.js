@@ -32,9 +32,9 @@ function getSuggestions(value) {
   return words.filter(word => regex.test(getSuggestionValue(word)));
 }
 
-function renderSuggestion(suggestion) {
+function renderSuggestion(suggestion, { query }) {
   return (
-    <Suggestion word={suggestion.word} language={suggestion.language} />
+    <Suggestion word={suggestion.word} language={suggestion.language} query={query} />
   );
 }
 
@@ -61,7 +61,6 @@ class Dictionary extends Component {
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
-    console.log('fetching');
     this.setState({
       suggestions: getSuggestions(value),
     });
