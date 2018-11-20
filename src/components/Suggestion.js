@@ -6,6 +6,7 @@ import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
 
 function Suggestion({ word, language, query }) {
   const image = `./images/flags/${language}.png`;
+  // https://github.com/moroshko/autosuggest-highlight#examples
   const matches = AutosuggestHighlightMatch(word, query);
   const parts = AutosuggestHighlightParse(word, matches);
 
@@ -14,7 +15,7 @@ function Suggestion({ word, language, query }) {
       <div className="col s2 l1">
         <img src={image} alt={language} className="circle responsive-img" />
       </div>
-      <div className="col s9 l10">
+      <div className="col s9 l10" style={{ fontSize: 'large' }}>
         {
           parts.map((part, index) => {
             const className = part.highlight ? 'red-text' : 'black-text';
