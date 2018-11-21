@@ -11,8 +11,8 @@ function Suggestion({ word, language, query }) {
   const parts = AutosuggestHighlightParse(word, matches);
 
   return (
-    <div className="row valign-wrapper">
-      <div className="col s2 offset-s1 l1">
+    <div className="row valign-wrapper" style={{ margin: 0, padding: 0 }}>
+      <div className="col s2 l1">
         <img src={image} alt={language} className="circle responsive-img" />
       </div>
       <div className="col s9 l10  offset-l1" style={{ fontSize: 'large' }}>

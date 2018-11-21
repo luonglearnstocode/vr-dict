@@ -9,10 +9,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="container">
-          <div className="row center-align">
-            <img src="./images/logo.png" alt="vr logo" className="responsive-img" />
-          </div>
+        <div className="row center-align">
+          <img id="logo" src="./images/logo.png" alt="vr logo" className="responsive-img" />
         </div>
         <Dictionary />
       </div>

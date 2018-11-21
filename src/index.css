@@ -17,12 +17,22 @@ body {
   background-size: cover;
 }
 
+.App {
+  height: 100%;
+}
+
+#logo {
+  margin: 0;
+  padding: 0;
+}
+
 .result-box {
   display: block;
   max-height: 400px;
   border-radius: 5px;
   background-color: #fff;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 blockquote{

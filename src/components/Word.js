@@ -14,7 +14,7 @@ const languages = {
 function Word({ language, word, usageNote }) {
   const image = `./images/flags/${language}.png`;
   return (
-    <div className="row valign-wrapper">
+    <div className="row valign-wrapper" style={{ margin: 0 }}>
       <div className="col s2 l1 offset-l1">
         <img align="middle" src={image} alt={language} className="circle responsive-img" title={languages[language]} />
       </div>
