@@ -1,7 +1,7 @@
 {
   "main.css": "/vr-dict/static/css/main.8f378203.chunk.css",
-  "main.js": "/vr-dict/static/js/main.bd86d982.chunk.js",
-  "main.js.map": "/vr-dict/static/js/main.bd86d982.chunk.js.map",
+  "main.js": "/vr-dict/static/js/main.46385e0d.chunk.js",
+  "main.js.map": "/vr-dict/static/js/main.46385e0d.chunk.js.map",
   "static/js/1.4d495d72.chunk.js": "/vr-dict/static/js/1.4d495d72.chunk.js",
   "static/js/1.4d495d72.chunk.js.map": "/vr-dict/static/js/1.4d495d72.chunk.js.map",
   "runtime~main.js": "/vr-dict/static/js/runtime~main.cf6652f9.js",
@@ -9,6 +9,6 @@
   "static/media/index.css": "/vr-dict/static/media/background.4ded2954.jpg",
   "static/css/main.8f378203.chunk.css.map": "/vr-dict/static/css/main.8f378203.chunk.css.map",
   "index.html": "/vr-dict/index.html",
-  "precache-manifest.04e6171eec3c0718c2769e634da8c498.js": "/vr-dict/precache-manifest.04e6171eec3c0718c2769e634da8c498.js",
+  "precache-manifest.d3f70577442be95a97f4cd7bf9396d56.js": "/vr-dict/precache-manifest.d3f70577442be95a97f4cd7bf9396d56.js",
   "service-worker.js": "/vr-dict/service-worker.js"
 }
