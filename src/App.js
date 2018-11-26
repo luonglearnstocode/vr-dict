@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="row center-align">
+        <div className="row center-align" style={{ margin: 0 }}>
           <img id="logo" src="./images/logo.png" alt="vr logo" className="responsive-img" />
         </div>
         <Dictionary />

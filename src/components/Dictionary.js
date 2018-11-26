@@ -4,6 +4,14 @@ import Result from './Result';
 import Suggestion from './Suggestion';
 import dict from '../dict';
 import words from '../words';
+import Select from 'react-select';
+// import Select from 'react-select-plus';
+import LanguageOption from './LanguageOption';
+
+const options = [
+  { value: 'english', label: 'English' },
+  { value: 'Finnish', label: 'Finnish' },
+];
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
 function escapeRegexCharacters(str) {
@@ -106,7 +114,11 @@ class Dictionary extends Component {
             inputProps={inputProps}
           />
         </div>
-
+        <Select
+          options={options}
+          components={{ LanguageOption }}
+          isMulti
+        />
         { result ? <Result word={result} /> : null }
       </div>
     );
