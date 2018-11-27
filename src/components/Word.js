@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Listen from './Listen';
 
 const languages = {
   en: 'English',
@@ -18,7 +19,7 @@ function Word({ language, word, usageNote }) {
       <div className="col s2 l1 offset-l1">
         <img align="middle" src={image} alt={language} className="circle responsive-img" title={languages[language]} />
       </div>
-      <div className="col s8 l8 offset-l1">
+      <div className="col s6 l8 offset-l1">
         <h4 className="flow-text">{ word }</h4>
         <blockquote>
           { usageNote }
@@ -30,6 +31,9 @@ function Word({ language, word, usageNote }) {
             <i className="material-icons">content_copy</i>
           </button>
         </CopyToClipboard>
+      </div>
+      <div className="col s2 l1">
+        <Listen word={word} language={language} />
       </div>
     </div>
   );

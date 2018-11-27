@@ -87,7 +87,6 @@ class Dictionary extends Component {
       value: '', // clear input field after selected
 
     });
-    // console.log(suggestionValue);
   };
 
 
@@ -110,6 +109,7 @@ class Dictionary extends Component {
             getSuggestionValue={getSuggestionValue}
             renderSuggestion={renderSuggestion}
             shouldRenderSuggestions={shouldRenderSuggestions}
+            focusInputOnSuggestionClick={false}
             // alwaysRenderSuggestions={true}
             inputProps={inputProps}
           />
