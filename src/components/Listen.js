@@ -7,7 +7,8 @@ function Listen({ language, word }) {
     // const audio = new Audio(url);
     // audio.play();
     const utterance = new SpeechSynthesisUtterance(word);
-    utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
+    utterance.lang = language;
+    // utterance.lang = language === 'de' ? 'de-DE' : 'en-US';
     speechSynthesis.speak(utterance);
   };
 

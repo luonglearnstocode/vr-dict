@@ -114,11 +114,11 @@ class Dictionary extends Component {
             inputProps={inputProps}
           />
         </div>
-        <Select
+        {/* <Select
           options={options}
           components={{ LanguageOption }}
           isMulti
-        />
+        /> */}
         { result ? <Result word={result} /> : null }
       </div>
     );
