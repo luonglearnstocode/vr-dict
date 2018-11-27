@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/vr-dict/precache-manifest.9f38cf42bda7dd5d7efcc556e04c8eba.js"
+  "/vr-dict/precache-manifest.3993fd00c2b3bc048ad400f9541c5609.js"
 );
 
 workbox.clientsClaim();
