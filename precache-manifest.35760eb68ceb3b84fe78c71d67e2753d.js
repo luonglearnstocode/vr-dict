@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/vr-dict/static/js/runtime~main.cf6652f9.js"
   },
   {
-    "revision": "b178dc2d702d7341c6d6",
-    "url": "/vr-dict/static/js/main.b178dc2d.chunk.js"
+    "revision": "2f80620d52a3bc8687c9",
+    "url": "/vr-dict/static/js/main.2f80620d.chunk.js"
   },
   {
     "revision": "a3751d03100ccbe39eec",
     "url": "/vr-dict/static/js/1.a3751d03.chunk.js"
   },
   {
-    "revision": "b178dc2d702d7341c6d6",
+    "revision": "2f80620d52a3bc8687c9",
     "url": "/vr-dict/static/css/main.4687e04c.chunk.css"
   },
   {
-    "revision": "c97781045fa1012c1d11d0b0e2738c83",
+    "revision": "955bafc989b6553680364c523bd08c35",
     "url": "/vr-dict/index.html"
   }
 ];
