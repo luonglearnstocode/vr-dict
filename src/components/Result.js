@@ -8,28 +8,29 @@ import React, { Component } from 'react';
 import '../index.css';
 import Word from './Word';
 
-const languages = ['fi', 'en', 'de', 'sv', 'no', 'da'];
+// const languages = ['fi', 'en', 'de', 'sv', 'no', 'da'];
 
 class Result extends Component {
-  constructor({ word }) {
+  constructor({ word, languages }) {
     super();
-    this.state = { word };
+    this.state = { word, languages };
   }
 
-  componentWillReceiveProps({ word }) {
-    this.setState({ ...this.state, word });
+  componentWillReceiveProps({ word, languages }) {
+    this.setState({ ...this.state, word, languages });
   }
 
   render() {
-    const { word } = this.state;
+    const { word, languages } = this.state;
 
     const translations = (
       <ul>
         {languages
-          .filter(language => language !== word.fromLanguage && `${language}Term` in word) // if dict has translation to this word
-          .map(language => <li key={language}><Word language={language} word={word[`${language}Term`]} usageNote={word[`${language}UsageNote`]} /></li>)}
+          .filter(language => language.value !== word.fromLanguage && `${language.value}Term` in word) // if dict has translation to this word
+          .map(language => <li key={language.value}><Word language={language.value} word={word[`${language.value}Term`]} usageNote={word[`${language.value}UsageNote`]} /></li>)}
       </ul>
     );
+    // console.log(translations);
 
     return (
       <div className="result-box">

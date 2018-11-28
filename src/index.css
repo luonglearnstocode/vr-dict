@@ -31,7 +31,7 @@ body {
 
 .result-box {
   display: block;
-  max-height: 50vh;
+  max-height: 45vh;
   border-radius: 5px;
   background-color: #fff;
   overflow-y: auto;
@@ -42,6 +42,15 @@ body {
   /* overflow-x: auto; */
   word-wrap: break-word;
   overflow-wrap: break-word;
+}
+
+.Select-menu-outer {
+  max-height: 10vh;
+}
+  
+.select {
+  margin: 0px;
+  /* overflow: auto; */
 }
 
 blockquote{

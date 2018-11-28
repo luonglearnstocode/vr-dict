@@ -9,8 +9,12 @@ import Select from 'react-select';
 import LanguageOption from './LanguageOption';
 
 const options = [
-  { value: 'english', label: 'English' },
-  { value: 'Finnish', label: 'Finnish' },
+  { value: 'en', label: 'English' },
+  { value: 'fi', label: 'Finnish' },
+  { value: 'de', label: 'German' },
+  { value: 'no', label: 'Norwegian' },
+  { value: 'sv', label: 'Swedish' },
+  { value: 'da', label: 'Danish' },
 ];
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
@@ -38,7 +42,7 @@ function getSuggestions(value) {
 
   // match words in the middle of the string
   // https://stackoverflow.com/questions/3507453/regex-match-for-beginning-of-multiple-words-in-string
-  const regex = new RegExp(`\\s(${escapedValue}[^\\s]*)|^(${escapedValue}[^\\s]*)`, 'gi');
+  const regex = new RegExp(`\\s(${escapedValue}[^\\s]*)|^(${escapedValue}[^\\s]*)`, 'i');
 
   return words.filter(word => regex.test(getSuggestionValue(word)));
 }
@@ -61,6 +65,7 @@ class Dictionary extends Component {
       value: '',
       result: '',
       suggestions: getSuggestions(''),
+      selectedLanguages: [],
     };
   }
 
@@ -92,9 +97,16 @@ class Dictionary extends Component {
     });
   };
 
+  handleSelect = (selectedOption) => {
+    this.setState({ selectedLanguages: selectedOption });
+  }
+
 
   render() {
-    const { value, suggestions, result } = this.state;
+    const {
+      value, suggestions, result, selectedLanguages,
+    } = this.state;
+
     const inputProps = {
       placeholder: 'type',
       value,
@@ -117,12 +129,23 @@ class Dictionary extends Component {
             inputProps={inputProps}
           />
         </div>
-        {/* <Select
-          options={options}
-          components={{ LanguageOption }}
-          isMulti
-        /> */}
-        { result ? <Result word={result} /> : null }
+        <div className="row select">
+          <Select
+            value={selectedLanguages}
+            onChange={this.handleSelect}
+            options={options}
+            components={{ Option: LanguageOption }}
+            className="select"
+            isMulti
+          />
+        </div>
+        {/* <div>
+          <label>
+            <input type="checkbox"  />
+            <span>Filled in</span>
+          </label>
+        </div> */}
+        { result ? <Result word={result} languages={selectedLanguages} /> : null }
       </div>
     );
   }
