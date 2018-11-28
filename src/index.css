@@ -29,6 +29,10 @@ body {
   padding: 0;
 }
 
+.suggest {
+  margin-bottom: 5px;
+}
+
 .result-box {
   display: block;
   max-height: 45vh;
@@ -44,8 +48,13 @@ body {
   overflow-wrap: break-word;
 }
 
-.Select-menu-outer {
+div.css-1hwfws3 {
   max-height: 10vh;
+  overflow: scroll;
+}
+
+.css-1g6gooi {
+  height: 6vw;
 }
   
 .select {

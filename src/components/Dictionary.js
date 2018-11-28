@@ -65,7 +65,10 @@ class Dictionary extends Component {
       value: '',
       result: '',
       suggestions: getSuggestions(''),
-      selectedLanguages: [],
+      selectedLanguages: [ // default languages
+        { value: 'en', label: 'English' },
+        { value: 'fi', label: 'Finnish' },
+      ],
     };
   }
 
@@ -99,8 +102,8 @@ class Dictionary extends Component {
 
   handleSelect = (selectedOption) => {
     this.setState({ selectedLanguages: selectedOption });
+    // console.log(selectedOption);
   }
-
 
   render() {
     const {
@@ -115,7 +118,7 @@ class Dictionary extends Component {
 
     return (
       <div className="container">
-        <div className="row">
+        <div className="row suggest">
           <Autosuggest
             suggestions={suggestions}
             onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -135,8 +138,9 @@ class Dictionary extends Component {
             onChange={this.handleSelect}
             options={options}
             components={{ Option: LanguageOption }}
-            className="select"
             isMulti
+            closeMenuOnSelect={false}
+            blurInputOnSelect={false}
           />
         </div>
         {/* <div>
