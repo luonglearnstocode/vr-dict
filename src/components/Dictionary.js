@@ -30,12 +30,15 @@ function getSuggestionValue(suggestion) {
 
 function getSuggestions(value) {
   const escapedValue = escapeRegexCharacters(value.trim());
+  // const escapedValue = value.trim();
 
   if (escapedValue === '') { // not display suggestions when input is blank
     return [];
   }
 
-  const regex = new RegExp(`\\b${escapedValue}`, 'i'); // match words in the middle of the string
+  // match words in the middle of the string
+  // https://stackoverflow.com/questions/3507453/regex-match-for-beginning-of-multiple-words-in-string
+  const regex = new RegExp(`\\s(${escapedValue}[^\\s]*)|^(${escapedValue}[^\\s]*)`, 'gi');
 
   return words.filter(word => regex.test(getSuggestionValue(word)));
 }
