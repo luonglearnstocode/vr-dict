@@ -35,7 +35,7 @@ body {
 
 .result-box {
   display: block;
-  max-height: 50vh;
+  max-height: 45vh;
   border-radius: 5px;
   margin-top: 1vh;
   background-color: #fff;
@@ -50,14 +50,18 @@ body {
 }
 
 div.css-1hwfws3 {
-  height: 7vh;
-  max-height: 10vh;
-  overflow: auto;
+  /* height: 7vh; */
+  max-height: 20vh;
+  /* overflow: auto; */
 }
 
 div.css-12jo7m5 {
   font-size: 2vh;
   /* height: 5vh; */
+}
+
+#react-select-2-input {
+  height: 1vh;
 }
   
 .select {

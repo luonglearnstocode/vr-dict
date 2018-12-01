@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import Select from 'react-select';
 import Result from './Result';
 import Suggestion from './Suggestion';
 import dict from '../dict';
 import words from '../words';
-import Select from 'react-select';
 // import Select from 'react-select-plus';
 import LanguageOption from './LanguageOption';
 
 const options = [
-  { value: 'en', label: 'English' },
-  { value: 'fi', label: 'Finnish' },
-  { value: 'de', label: 'German' },
-  { value: 'no', label: 'Norwegian' },
-  { value: 'sv', label: 'Swedish' },
-  { value: 'da', label: 'Danish' },
+  { value: 'en', label: 'en' },
+  { value: 'fi', label: 'fi' },
+  { value: 'de', label: 'de' },
+  { value: 'no', label: 'no' },
+  { value: 'sv', label: 'sv' },
+  { value: 'da', label: 'da' },
 ];
 
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions#Using_Special_Characters
@@ -57,6 +57,17 @@ function shouldRenderSuggestions(value) {
   return value.trim().length >= 0;
 }
 
+function loadSelectedLanguages() {
+  const defaultLanguages = [
+    { value: 'en', label: 'en' },
+    { value: 'fi', label: 'fi' },
+  ];
+  const cachedHits = localStorage.getItem('selectedLanguages');
+  console.log(cachedHits);
+  return JSON.parse(cachedHits) || defaultLanguages;
+}
+
+
 class Dictionary extends Component {
   constructor() {
     super();
@@ -65,10 +76,7 @@ class Dictionary extends Component {
       value: '',
       result: '',
       suggestions: getSuggestions(''),
-      selectedLanguages: [ // default languages
-        { value: 'en', label: 'English' },
-        { value: 'fi', label: 'Finnish' },
-      ],
+      selectedLanguages: loadSelectedLanguages(),
     };
   }
 
@@ -102,6 +110,7 @@ class Dictionary extends Component {
 
   handleSelect = (selectedOption) => {
     this.setState({ selectedLanguages: selectedOption });
+    localStorage.setItem('selectedLanguages', JSON.stringify(selectedOption));
     // console.log(selectedOption);
   }
 
@@ -142,6 +151,7 @@ class Dictionary extends Component {
             isSearchable={false}
             closeMenuOnSelect={false}
             blurInputOnSelect={false}
+            placeholder="Select languages"
           />
         </div>
         { result ? <Result word={result} languages={selectedLanguages} /> : null }
