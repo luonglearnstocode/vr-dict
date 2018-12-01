@@ -139,16 +139,11 @@ class Dictionary extends Component {
             options={options}
             components={{ Option: LanguageOption }}
             isMulti
+            isSearchable={false}
             closeMenuOnSelect={false}
             blurInputOnSelect={false}
           />
         </div>
-        {/* <div>
-          <label>
-            <input type="checkbox"  />
-            <span>Filled in</span>
-          </label>
-        </div> */}
         { result ? <Result word={result} languages={selectedLanguages} /> : null }
       </div>
     );
