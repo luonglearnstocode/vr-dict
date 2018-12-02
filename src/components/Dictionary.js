@@ -7,6 +7,7 @@ import dict from '../dict';
 import words from '../words';
 // import Select from 'react-select-plus';
 import LanguageOption from './LanguageOption';
+import MultiValueLabel from './MultiValueLabel';
 
 const options = [
   { value: 'en', label: 'en' },
@@ -63,7 +64,7 @@ function loadSelectedLanguages() {
     { value: 'fi', label: 'fi' },
   ];
   const cachedHits = localStorage.getItem('selectedLanguages');
-  console.log(cachedHits);
+  // console.log(cachedHits);
   return JSON.parse(cachedHits) || defaultLanguages;
 }
 
@@ -146,7 +147,7 @@ class Dictionary extends Component {
             value={selectedLanguages}
             onChange={this.handleSelect}
             options={options}
-            components={{ Option: LanguageOption }}
+            components={{ Option: LanguageOption, MultiValueLabel }}
             isMulti
             isSearchable={false}
             closeMenuOnSelect={false}
