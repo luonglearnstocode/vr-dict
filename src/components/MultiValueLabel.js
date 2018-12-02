@@ -12,7 +12,7 @@ const labelToLanguage = {
 
 const MultiValueLabel = props => (
   <div>
-    <img src={`./images/flags/${props.data.label}.png`} alt={props.data.label} title={labelToLanguage[props.data.label]} className="circle" height="20vh" />
+    <img src={`./images/flags/${props.data.label}.png`} alt={props.data.label} title={labelToLanguage[props.data.label]} className="circle" width="30vw" />
   </div>
 );
 
